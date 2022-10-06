@@ -1,0 +1,27 @@
+<Window x:Class="JAD_app.CheckinWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JAD_app"
+        mc:Ignorable="d"
+        Title="CheckinsByUser" Height="500" Width="500">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Name="CheckinGrid" AlternatingRowBackground = "LightBlue" AlternationCount = "2" AutoGenerateColumns = "False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Month" Binding="{Binding month}"/>
+                <DataGridTextColumn Width="*" Header="Checkins" Binding="{Binding checkin}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add Checkin" Name="checkinButton" Grid.Row="1" Grid.Column="0" Click="checkinButton_Click"/>
+    </Grid>
+</Window>
