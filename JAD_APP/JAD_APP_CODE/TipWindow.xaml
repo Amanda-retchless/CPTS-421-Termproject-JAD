@@ -1,0 +1,39 @@
+<Window x:Class="JAD_app.TipsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JAD_app"
+        mc:Ignorable="d"
+        Title="Tips by Users" Height="500" Width="500">
+    <Grid Background="#bac1cf">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="tipTextBox" Grid.Row="0" Height="65" Margin="4 4 2 2"/>
+                <GroupBox Grid.Row="1" Header="Business Tips" Margin="4 2 2 2">
+                    <DataGrid x:Name="tipGrid" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+                </GroupBox>
+                <GroupBox Grid.Row="2" Header="Friends who reviewed this business" Margin="4 2 2 4">
+                    <DataGrid x:Name="friendTipGrid" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="addTipBtn" Grid.Row="0" Content="Add Tip" Margin="2 4 4 2" Click="addTipBtn_Click"/>
+                <Button x:Name="likeBtn" Grid.Row="1" Content="Like" Margin="2 2 4 2" Click="likeBtn_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
